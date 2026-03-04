@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>More Than Motion | Apply For Your Studio</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="We're Picking ONE Studio in Your City — $1,000+ Intensive Credit">
+<meta property="og:description" content="We bring elite faculty, handle all logistics, and you keep the profit. Apply now — only 1 studio per city selected.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="[YOUR_URL_HERE]">
+<meta property="og:image" content="[YOUR_OG_IMAGE_URL_HERE]">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Facebook Pixel - Replace [YOUR_PIXEL_ID] with your actual Pixel ID -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','[YOUR_PIXEL_ID]');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=[YOUR_PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;--black-2:#111111;--black-3:#1a1a1a;
+  --white:#ffffff;--white-90:rgba(255,255,255,.9);--white-70:rgba(255,255,255,.7);--white-50:rgba(255,255,255,.5);--white-30:rgba(255,255,255,.3);--white-10:rgba(255,255,255,.1);--white-06:rgba(255,255,255,.06);--white-03:rgba(255,255,255,.03);
+  --gold:#D4A843;--gold-light:#E8C96A;--gold-dark:#B8922F;--gold-10:rgba(212,168,67,.1);--gold-15:rgba(212,168,67,.15);--gold-20:rgba(212,168,67,.2);--gold-30:rgba(212,168,67,.3);
+  --red:#EF4444;--red-dark:#DC2626;
+  --green:#22C55E;--green-15:rgba(34,197,94,.15);
+  --radius:12px;--radius-lg:16px;--radius-full:100px;
+  --shadow:0 8px 30px rgba(0,0,0,.3);
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+
+/* Utility */
+.container{max-width:720px;margin:0 auto;padding:0 20px}
+.text-center{text-align:center}
+
+/* ========== URGENCY BAR ========== */
+.urgency-bar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:var(--red);text-align:center;padding:10px 16px;
+  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  animation:urgencyPulse 2.5s ease-in-out infinite;
+}
+@keyframes urgencyPulse{0%,100%{background:var(--red)}50%{background:var(--red-dark)}}
+body{padding-top:38px}
+
+/* ========== HERO ========== */
+.hero{padding:48px 0 40px;position:relative}
+.hero::after{display:none}
+.badge{
+  display:inline-block;
+  background:var(--gold-10);border:1px solid var(--gold-30);color:var(--gold);
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 14px;border-radius:var(--radius-full);margin-bottom:20px;
+}
+h1{font-size:clamp(26px,6vw,44px);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:16px}
+h1 .hl{color:var(--gold)}
+.hero-sub{font-size:clamp(15px,3.5vw,18px);color:var(--white-50);max-width:520px;margin:0 auto 32px;line-height:1.6}
+.hero-sub strong{color:var(--white-90);font-weight:600}
+
+/* ========== FORM CARD ========== */
+.form-card{
+  background:var(--black-2);
+  border:1px solid var(--white-10);
+  border-radius:var(--radius-lg);
+  padding:28px 24px;
+  max-width:440px;margin:0 auto;
+  position:relative;overflow:hidden;
+}
+.form-card::before{
+  content:'';position:absolute;top:-1px;left:-1px;right:-1px;
+  height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light),var(--gold-dark));
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* Progress Bar — hidden on step 1, visible after */
+.progress{display:flex;gap:6px;margin-bottom:24px;opacity:0;height:0;overflow:hidden;transition:opacity .3s ease,height .3s ease,margin .3s ease;margin-bottom:0}
+.progress.visible{opacity:1;height:3px;margin-bottom:24px}
+.progress-dot{
+  flex:1;height:3px;border-radius:2px;
+  background:var(--white-10);transition:background .4s ease;
+}
+.progress-dot.active{background:var(--gold)}
+.progress-dot.done{background:var(--gold);opacity:.5}
+
+/* Form Steps */
+.form-step{display:none;animation:fadeSlideIn .4s ease}
+.form-step.active{display:block}
+@keyframes fadeSlideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.step-label{font-size:13px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.step-heading{font-size:20px;font-weight:800;margin-bottom:4px;line-height:1.2}
+.step-sub{font-size:13px;color:var(--white-50);margin-bottom:20px;line-height:1.5}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.form-row.single{grid-template-columns:1fr}
+.form-input{
+  width:100%;padding:14px 16px;
+  background:rgba(255,255,255,.05);border:1px solid var(--white-10);
+  border-radius:10px;color:var(--white);font-size:16px;font-family:inherit;
+  transition:border-color .2s,box-shadow .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.form-input::placeholder{color:var(--white-30)}
+.form-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-15)}
+.form-input.error{border-color:var(--red);box-shadow:0 0 0 3px rgba(239,68,68,.15)}
+.error-msg{font-size:12px;color:var(--red);margin-top:4px;display:none}
+.error-msg.show{display:block}
+
+textarea.form-input{
+  resize:vertical;min-height:120px;max-height:200px;line-height:1.5;
+}
+
+.cta-btn{
+  display:block;width:100%;padding:16px 24px;
+  background:var(--gold);color:var(--black);
+  font-size:15px;font-weight:800;font-family:inherit;
+  text-transform:uppercase;letter-spacing:.06em;
+  border:none;border-radius:10px;cursor:pointer;
+  transition:transform .15s,box-shadow .15s,background .2s;
+  -webkit-tap-highlight-color:transparent;
+  animation:btnGlow 2.5s ease-in-out infinite;
+}
+@keyframes btnGlow{
+  0%,100%{box-shadow:0 0 8px rgba(212,168,67,.15),0 0 20px rgba(212,168,67,.05)}
+  50%{box-shadow:0 0 16px rgba(212,168,67,.35),0 0 40px rgba(212,168,67,.15)}
+}
+.cta-btn:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 30px rgba(212,168,67,.3);animation:none}
+.cta-btn:active{transform:scale(.98);animation:none}
+
+.back-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  background:none;border:none;color:var(--white-50);
+  font-size:13px;font-family:inherit;font-weight:500;
+  cursor:pointer;padding:8px 0;margin-bottom:12px;
+  transition:color .2s;-webkit-tap-highlight-color:transparent;
+}
+.back-btn:hover{color:var(--white)}
+.back-btn svg{width:16px;height:16px}
+
+.form-note{text-align:center;font-size:11px;color:var(--white-30);margin-top:12px;line-height:1.5}
+.spots{text-align:center;margin-bottom:16px;font-size:13px;font-weight:600;color:var(--red)}
+.spots .dot{display:inline-block;width:7px;height:7px;background:var(--red);border-radius:50%;margin-right:5px;animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Step 5: Calendar */
+.cal-placeholder{
+  background:var(--black-3);border:1px solid var(--white-10);
+  border-radius:var(--radius);padding:24px 16px;text-align:center;
+  margin-top:16px;
+}
+.cal-header{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px}
+.cal-header-icon{width:36px;height:36px;background:var(--gold-10);border:1px solid var(--gold-30);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.cal-header-text{font-size:14px;font-weight:700}
+.cal-header-sub{font-size:12px;color:var(--white-50)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:16px}
+.cal-day-label{font-size:10px;color:var(--white-30);font-weight:600;text-transform:uppercase;padding:4px 0;text-align:center}
+.cal-day{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:500;border-radius:8px;color:var(--white-50);
+  cursor:pointer;transition:var(--transition);
+}
+.cal-day:hover{background:var(--white-06);color:var(--white)}
+.cal-day.selected{background:var(--gold);color:var(--black);font-weight:700}
+.cal-day.disabled{opacity:.2;pointer-events:none}
+.cal-times{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.cal-time{
+  padding:10px;background:var(--white-03);border:1px solid var(--white-10);
+  border-radius:8px;font-size:13px;font-weight:600;text-align:center;
+  cursor:pointer;transition:var(--transition);
+}
+.cal-time:hover{border-color:var(--gold);color:var(--gold)}
+.cal-time.selected{background:var(--gold-10);border-color:var(--gold);color:var(--gold)}
+.cal-note{font-size:11px;color:var(--white-30);margin-top:12px}
+
+/* Success State */
+.form-success{display:none;text-align:center;padding:16px 0}
+.form-success .chk{
+  width:56px;height:56px;background:var(--green-15);
+  border:2px solid var(--green);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;font-size:24px;
+  animation:scaleIn .4s cubic-bezier(.4,0,.2,1);
+}
+@keyframes scaleIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.form-success h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.form-success p{font-size:14px;color:var(--white-50);line-height:1.6;margin-bottom:16px}
+.form-success .video-placeholder{
+  width:100%;aspect-ratio:16/9;background:var(--black-3);
+  border:1px solid var(--white-10);border-radius:var(--radius);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  margin-bottom:16px;
+}
+.form-success .video-placeholder .play-icon{
+  width:48px;height:48px;background:var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.form-success .video-placeholder span{font-size:11px;color:var(--white-30)}
+.ig-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;background:var(--white-06);border:1px solid var(--white-10);
+  border-radius:var(--radius-full);color:var(--white);font-size:14px;font-weight:600;
+  text-decoration:none;transition:var(--transition);
+}
+.ig-btn:hover{background:var(--white-10);border-color:var(--white-30)}
+
+/* ========== PROOF BAR ========== */
+.proof-bar{padding:36px 0;border-bottom:1px solid var(--white-06)}
+.proof-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
+.proof-num{font-size:clamp(22px,5vw,32px);font-weight:900;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+.proof-label{font-size:12px;color:var(--white-50);margin-top:4px;font-weight:500}
+
+/* ========== CREDITS BANNER ========== */
+.credits-banner{
+  padding:40px 0;
+  background:linear-gradient(180deg,rgba(212,168,67,.08) 0%,rgba(212,168,67,.02) 100%);
+  border-top:1px solid var(--gold-15);
+  border-bottom:1px solid var(--gold-15);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.credits-banner::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.credits-label{
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--white-50);margin-bottom:14px;
+}
+.credits-names{
+  font-size:clamp(18px,4vw,26px);font-weight:800;
+  color:var(--white);line-height:1.5;letter-spacing:-.01em;
+}
+.credits-names .sep{
+  color:var(--gold);margin:0 6px;font-weight:400;opacity:.5;
+}
+.credits-names .name{
+  color:var(--white-90);
+  background:linear-gradient(180deg,var(--white) 0%,var(--white-70) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.credits-sub{
+  margin-top:12px;font-size:13px;color:var(--gold);font-weight:600;
+  letter-spacing:.04em;
+}
+
+/* ========== IMAGE GALLERY ========== */
+.gallery{padding:0;overflow:hidden}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap:4px;
+}
+.gallery-grid img{
+  width:100%;height:280px;object-fit:cover;
+  display:block;
+  filter:brightness(.85) contrast(1.05);
+  transition:filter .3s ease,transform .3s ease;
+}
+.gallery-grid img:hover{filter:brightness(1) contrast(1.05);transform:scale(1.02)}
+
+/* ========== HERO IMAGE ========== */
+.hero-image{
+  max-width:520px;margin:0 auto 32px;
+  border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--white-10);
+}
+.hero-image img{width:100%;height:auto;display:block;filter:brightness(.9) contrast(1.05)}
+
+/* ========== SECTIONS ========== */
+.section{padding:56px 0;border-bottom:1px solid var(--white-06)}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacing:-.02em;margin-bottom:28px}
+
+/* ========== VIDEO ========== */
+.video-box{
+  width:100%;aspect-ratio:16/9;background:var(--black-2);
+  border:1px solid var(--white-10);border-radius:var(--radius);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  cursor:pointer;transition:border-color .2s;
+}
+.video-box:hover{border-color:var(--gold-30)}
+.play-btn{
+  width:56px;height:56px;background:var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .2s;
+}
+.video-box:hover .play-btn{transform:scale(1.08)}
+.play-btn svg{margin-left:3px}
+.vid-cap{font-size:12px;color:var(--white-30);font-weight:500}
+
+/* ========== BENEFITS ========== */
+.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.benefit-card{
+  background:var(--white-03);border:1px solid var(--white-06);
+  border-radius:var(--radius);padding:20px 16px;
+}
+.benefit-icon{font-size:24px;margin-bottom:10px}
+.benefit-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.benefit-desc{font-size:13px;color:var(--white-50);line-height:1.5}
+
+/* ========== STEPS ========== */
+.steps{display:grid;gap:20px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num-circle{
+  flex-shrink:0;width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--gold-10);border:1px solid var(--gold-30);
+  border-radius:50%;font-size:16px;font-weight:800;color:var(--gold);
+}
+.step-title-text{font-size:16px;font-weight:700;margin-bottom:2px}
+.step-desc-text{font-size:13px;color:var(--white-50);line-height:1.5}
+
+/* ========== FACULTY ========== */
+.faculty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.faculty-card{
+  background:var(--white-03);border:1px solid var(--white-06);
+  border-radius:var(--radius);padding:20px 12px;text-align:center;
+}
+.faculty-avatar{
+  width:64px;height:64px;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));
+  border-radius:50%;margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:800;color:var(--black);
+}
+.faculty-name{font-size:14px;font-weight:700;margin-bottom:2px}
+.faculty-credit{font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+
+/* ========== TESTIMONIAL ========== */
+.test-block{
+  background:rgba(212,168,67,.04);border:1px solid var(--gold-15);
+  border-radius:14px;padding:28px 24px;position:relative;
+}
+.test-block::before{
+  content:'\201C';position:absolute;top:12px;left:20px;
+  font-size:56px;color:var(--gold);opacity:.15;line-height:1;font-family:Georgia,serif;
+}
+.test-text{font-size:16px;line-height:1.65;font-style:italic;margin-bottom:14px;padding-top:8px}
+.test-author{font-size:14px;font-weight:700;color:var(--gold)}
+.test-role{font-size:12px;color:var(--white-50)}
+
+/* ========== FAQ ========== */
+.faq-list{display:grid;gap:8px}
+.faq-item{
+  background:var(--white-03);border:1px solid var(--white-06);
+  border-radius:var(--radius);overflow:hidden;
+}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:16px 18px;background:none;border:none;color:var(--white);
+  font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;text-align:left;
+  -webkit-tap-highlight-color:transparent;gap:12px;
+}
+.faq-q:hover{color:var(--gold)}
+.faq-arrow{flex-shrink:0;transition:transform .25s ease;color:var(--white-50)}
+.faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--gold)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;
+  font-size:13px;color:var(--white-50);line-height:1.6;padding:0 18px;
+}
+.faq-item.open .faq-a{max-height:200px;padding:0 18px 16px}
+
+/* ========== FINAL CTA ========== */
+.final-cta{padding:56px 0 64px;text-align:center}
+.final-cta h2{margin-bottom:6px}
+.final-sub{color:var(--white-50);font-size:15px;margin-bottom:28px}
+
+/* ========== STICKY MOBILE CTA ========== */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:linear-gradient(transparent,var(--black) 30%);
+  padding:16px 20px 20px;
+  transform:translateY(100%);transition:transform .3s ease;
+  pointer-events:none;
+}
+.sticky-cta.visible{transform:translateY(0);pointer-events:auto}
+.sticky-cta .cta-btn{
+  max-width:440px;margin:0 auto;
+  box-shadow:0 -4px 20px rgba(0,0,0,.5);
+}
+
+/* ========== FOOTER ========== */
+.footer{padding:20px 0;text-align:center;font-size:11px;color:var(--white-30);border-top:1px solid var(--white-06)}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:480px){
+  .urgency-bar{font-size:11px;padding:8px 12px}
+  body{padding-top:34px}
+  .hero{padding:36px 0 32px}
+  .form-card{padding:24px 18px}
+  .form-row{grid-template-columns:1fr}
+  .proof-stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .proof-num{font-size:20px}
+  .proof-label{font-size:10px}
+  .section{padding:44px 0}
+  .benefit-grid{grid-template-columns:1fr}
+  .faculty-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .faculty-avatar{width:52px;height:52px;font-size:18px}
+  .faculty-name{font-size:12px}
+  .faculty-credit{font-size:10px}
+  .cal-grid{gap:2px}
+  .cal-day{font-size:12px}
+  .credits-banner{padding:28px 0}
+  .credits-names{font-size:clamp(11px,3vw,16px);line-height:1.4;white-space:nowrap}
+  .credits-names .sep{margin:0 3px}
+  .credits-sub{font-size:11px}
+  .gallery-grid{grid-template-columns:1fr 1fr;gap:3px}
+  .gallery-grid img{height:200px}
+}
+@media(min-width:481px) and (max-width:768px){
+  .hero{padding:44px 0 36px}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== URGENCY BAR ====== -->
+<div class="urgency-bar">&#9889; Only 1 studio per city!<br><span style="font-weight:500;opacity:.9;font-size:0.85em">Apply now or send this page to your studio owner!</span></div>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="hero">
+<div class="container text-center">
+  <div class="badge">By Application Only</div>
+  <h1>We're Picking <span class="hl">ONE Studio</span> in Your City and Giving Them <span class="hl">$1,000</span> and Making Their Dancers <span class="hl">ELITE</span></h1>
+  <p class="hero-sub">Get a <strong style="text-transform:uppercase">fully produced dance intensive</strong> at your studio. We handle <strong>EVERYTHING.</strong> Your studio becomes #1 in town. Your dancers get <strong style="color:var(--white);text-transform:uppercase">Elite Training.</strong></p>
+
+  <!-- ====== MULTI-STEP FORM ====== -->
+  <div class="form-card" id="mainForm">
+    <!-- Progress -->
+    <div class="progress">
+      <div class="progress-dot active" id="pd1"></div>
+      <div class="progress-dot" id="pd2"></div>
+      <div class="progress-dot" id="pd3"></div>
+      <div class="progress-dot" id="pd4"></div>
+      <div class="progress-dot" id="pd5"></div>
+    </div>
+
+    <!-- STEP 1: Name -->
+    <div class="form-step active" id="step1">
+      <div class="spots"><span class="dot"></span>Limited &mdash; 1 studio per city</div>
+      <div class="step-heading">Apply For Your Studio</div>
+      <div class="step-sub">Takes 30 seconds. See if your studio qualifies.</div>
+      <div class="form-row">
+        <div>
+          <input type="text" class="form-input" placeholder="First Name" id="fname" autocomplete="given-name" enterkeyhint="next">
+          <div class="error-msg" id="fname-err">Please enter your first name</div>
+        </div>
+        <div>
+          <input type="text" class="form-input" placeholder="Last Name" id="lname" autocomplete="family-name" enterkeyhint="next">
+          <div class="error-msg" id="lname-err">Please enter your last name</div>
+        </div>
+      </div>
+      <button class="cta-btn" onclick="nextStep(1)">Apply Now</button>
+      <p class="form-note" style="color:var(--gold);font-size:12px;font-weight:600">Apply now before your competitor does&hellip; 1 slot available!</p>
+    </div>
+
+    <!-- STEP 2: Email -->
+    <div class="form-step" id="step2">
+      <button class="back-btn" onclick="prevStep(2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+      <div class="step-label">Step 2 of 4</div>
+      <div class="step-heading">What's your email?</div>
+      <div class="step-sub">We'll send your application confirmation here.</div>
+      <div class="form-row single">
+        <div>
+          <input type="email" class="form-input" placeholder="you@yourstudio.com" id="email" autocomplete="email" enterkeyhint="next" inputmode="email">
+          <div class="error-msg" id="email-err">Please enter a valid email</div>
+        </div>
+      </div>
+      <button class="cta-btn" onclick="nextStep(2)">Continue &rarr;</button>
+    </div>
+
+    <!-- STEP 3: Phone -->
+    <div class="form-step" id="step3">
+      <button class="back-btn" onclick="prevStep(3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+      <div class="step-label">Step 3 of 4</div>
+      <div class="step-heading">Best number to reach you?</div>
+      <div class="step-sub">We'll personally reach out if your studio qualifies.</div>
+      <div class="form-row single">
+        <div>
+          <input type="tel" class="form-input" placeholder="(555) 123-4567" id="phone" autocomplete="tel" enterkeyhint="next" inputmode="tel">
+          <div class="error-msg" id="phone-err">Please enter your phone number</div>
+        </div>
+      </div>
+      <button class="cta-btn" onclick="nextStep(3)">Continue &rarr;</button>
+    </div>
+
+    <!-- STEP 4: Why Your Studio -->
+    <div class="form-step" id="step4">
+      <button class="back-btn" onclick="prevStep(4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+      <div class="step-label">Final Step</div>
+      <div class="step-heading">Why should your studio win?</div>
+      <div class="step-sub">Tell us why your studio deserves the $1,000 credit and a fully produced intensive. This is your pitch &mdash; make it count.</div>
+      <div class="form-row single">
+        <div>
+          <textarea class="form-input" placeholder="We deserve this because..." id="pitch" rows="5"></textarea>
+          <div class="error-msg" id="pitch-err">Tell us a little about your studio</div>
+        </div>
+      </div>
+      <button class="cta-btn" onclick="nextStep(4)">Submit Application &rarr;</button>
+    </div>
+
+    <!-- STEP 5: Calendar Booking -->
+    <div class="form-step" id="step5">
+      <div class="step-heading" style="margin-bottom:2px">You're In! 🎉</div>
+      <div class="step-sub" style="margin-bottom:0">One last thing &mdash; book a quick call so we can customize your intensive.</div>
+
+      <!-- Cal.com Placeholder -->
+      <div class="cal-placeholder">
+        <div class="cal-header">
+          <div class="cal-header-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="cal-header-text">Book Your Call</div>
+            <div class="cal-header-sub">15 min &bull; Strategy Call</div>
+          </div>
+        </div>
+
+        <!-- Mock Calendar -->
+        <div class="cal-grid">
+          <div class="cal-day-label">Sun</div><div class="cal-day-label">Mon</div><div class="cal-day-label">Tue</div><div class="cal-day-label">Wed</div><div class="cal-day-label">Thu</div><div class="cal-day-label">Fri</div><div class="cal-day-label">Sat</div>
+          <div class="cal-day disabled"></div>
+          <div class="cal-day disabled"></div>
+          <div class="cal-day disabled"></div>
+          <div class="cal-day disabled">1</div>
+          <div class="cal-day disabled">2</div>
+          <div class="cal-day disabled">3</div>
+          <div class="cal-day disabled">4</div>
+          <div class="cal-day disabled">5</div>
+          <div class="cal-day disabled">6</div>
+          <div class="cal-day disabled">7</div>
+          <div class="cal-day disabled">8</div>
+          <div class="cal-day" onclick="selectDay(this)">9</div>
+          <div class="cal-day" onclick="selectDay(this)">10</div>
+          <div class="cal-day" onclick="selectDay(this)">11</div>
+          <div class="cal-day" onclick="selectDay(this)">12</div>
+          <div class="cal-day" onclick="selectDay(this)">13</div>
+          <div class="cal-day" onclick="selectDay(this)">14</div>
+          <div class="cal-day" onclick="selectDay(this)">15</div>
+          <div class="cal-day" onclick="selectDay(this)">16</div>
+          <div class="cal-day" onclick="selectDay(this)">17</div>
+          <div class="cal-day" onclick="selectDay(this)">18</div>
+          <div class="cal-day" onclick="selectDay(this)">19</div>
+          <div class="cal-day" onclick="selectDay(this)">20</div>
+          <div class="cal-day" onclick="selectDay(this)">21</div>
+          <div class="cal-day" onclick="selectDay(this)">22</div>
+          <div class="cal-day" onclick="selectDay(this)">23</div>
+          <div class="cal-day" onclick="selectDay(this)">24</div>
+          <div class="cal-day" onclick="selectDay(this)">25</div>
+          <div class="cal-day" onclick="selectDay(this)">26</div>
+          <div class="cal-day" onclick="selectDay(this)">27</div>
+          <div class="cal-day" onclick="selectDay(this)">28</div>
+          <div class="cal-day" onclick="selectDay(this)">29</div>
+          <div class="cal-day" onclick="selectDay(this)">30</div>
+          <div class="cal-day" onclick="selectDay(this)">31</div>
+        </div>
+
+        <div class="cal-times" id="calTimes" style="display:none">
+          <div class="cal-time" onclick="selectTime(this)">10:00 AM</div>
+          <div class="cal-time" onclick="selectTime(this)">11:00 AM</div>
+          <div class="cal-time" onclick="selectTime(this)">1:00 PM</div>
+          <div class="cal-time" onclick="selectTime(this)">2:00 PM</div>
+          <div class="cal-time" onclick="selectTime(this)">3:00 PM</div>
+          <div class="cal-time" onclick="selectTime(this)">4:00 PM</div>
+        </div>
+
+        <button class="cta-btn" id="bookBtn" style="display:none;margin-top:16px" onclick="bookCall()">Confirm Booking &rarr;</button>
+
+        <div class="cal-note">
+          <!-- Replace this entire cal-placeholder div with your Cal.com embed -->
+          <br>Placeholder &mdash; Replace with Cal.com embed code
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS: After Booking -->
+    <div class="form-success" id="formSuccess">
+      <div class="chk">&#10003;</div>
+      <h3>You're All Set!</h3>
+      <p>Your application is in and your call is booked. We'll see you soon.</p>
+      <div class="video-placeholder">
+        <div class="play-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5z" fill="#0a0a0a"/></svg></div>
+        <span>[Replace with welcome video]</span>
+      </div>
+      <a href="https://instagram.com/morethanmotionintensive" target="_blank" rel="noopener" class="ig-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow @morethanmotionintensive
+      </a>
+    </div>
+  </div>
+  <!-- END FORM -->
+</div>
+</section>
+
+<!-- ====== CREDITS BANNER ====== -->
+<section class="credits-banner">
+<div class="container">
+  <div class="credits-label">Our Faculty Have Worked With</div>
+  <div class="credits-names">
+    <span class="name">Beyonc&eacute;</span><span class="sep">&bull;</span><span class="name">Justin Bieber</span><span class="sep">&bull;</span><span class="name">Tate McRae</span><span class="sep">&bull;</span><span class="name">Nicki Minaj</span>
+  </div>
+  <div class="credits-sub">As Seen On: Dancing with the Stars &bull; So You Think You Can Dance</div>
+</div>
+</section>
+
+<!-- ====== PHOTO GALLERY ====== -->
+<section class="gallery">
+  <div class="gallery-grid">
+    <img src="group-energy.png" alt="MTMI intensive group energy" loading="lazy">
+    <img src="studio-dance.png" alt="Studio dance session" loading="lazy">
+    <img src="floor-move.png" alt="Dancer performing" loading="lazy">
+    <img src="hero-collage.png" alt="More Than Motion highlights" loading="lazy">
+  </div>
+</section>
+
+<!-- ====== VIDEO ====== -->
+<section class="section">
+<div class="container text-center">
+  <span class="tag">See It In Action</span>
+  <h2>This Is What Happens When We Walk Into a Studio</h2>
+  <div class="video-box" id="videoBox">
+    <div class="play-btn"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5z" fill="#0a0a0a"/></svg></div>
+    <span class="vid-cap">[Replace with highlight reel or testimonial video]</span>
+  </div>
+</div>
+  <div style="margin-top:32px"><button class="cta-btn" style="max-width:440px;margin:0 auto" onclick="scrollToForm()">Apply Now</button></div>
+</div>
+</section>
+
+<!-- ====== BENEFITS ====== -->
+<section class="section">
+<div class="container text-center">
+  <span class="tag">What's Included</span>
+  <h2>Everything Your Studio Needs. Nothing You Have to Do.</h2>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">&#11088;</div>
+      <div class="benefit-title">Elite Faculty</div>
+      <div class="benefit-desc">Professionals who've worked with Beyonc&eacute;, Bieber, Tate McRae&hellip;names your dancers already follow.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">&#128203;</div>
+      <div class="benefit-title">We Handle Everything</div>
+      <div class="benefit-desc">Flights, hotels, scheduling, payment collection, logistics. You do literally nothing.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">&#127909;</div>
+      <div class="benefit-title">On-Camera Experience</div>
+      <div class="benefit-desc">Professional video shoot, audition feedback class, and Q&amp;A sessions with working industry pros.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">&#128176;</div>
+      <div class="benefit-title">You Profit $1K&ndash;$5K</div>
+      <div class="benefit-desc">Studios make up to $5K for NO WORK and their dancers are elevated to the best in town!</div>
+    </div>
+  </div>
+  <p style="color:var(--white-30);font-size:12px;margin-top:16px;line-height:1.5">Two tracks available: <strong style="color:var(--white-50)">Dance Team</strong> &amp; <strong style="color:var(--white-50)">Commercial</strong>. Optional add-ons: videographer services &amp; competition dance critiques for nationals.</p>
+</div>
+</section>
+
+<!-- ====== HOW IT WORKS ====== -->
+<section class="section">
+<div class="container">
+  <div class="text-center"><span class="tag">How It Works</span><h2>3 Steps. That's It.</h2></div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num-circle">1</div>
+      <div><div class="step-title-text">Apply Below</div><div class="step-desc-text">Takes 30 seconds. Tell us about your studio and we'll review your application.</div></div>
+    </div>
+    <div class="step">
+      <div class="step-num-circle">2</div>
+      <div><div class="step-title-text">We Contact You</div><div class="step-desc-text">Our team personally reaches out to customize your intensive. Dates, faculty, format, everything.</div></div>
+    </div>
+    <div class="step">
+      <div class="step-num-circle">3</div>
+      <div><div class="step-title-text">We Show Up & Run It All</div><div class="step-desc-text">Your dancers get elite training. You make money and provide real value for your dancers.</div></div>
+    </div>
+  </div>
+</div>
+  <div style="margin-top:32px"><button class="cta-btn" style="max-width:440px;margin:0 auto" onclick="scrollToForm()">Apply Now</button></div>
+</div>
+</section>
+
+<!-- ====== FACULTY ====== -->
+<section class="section">
+<div class="container text-center">
+  <span class="tag">Our Faculty</span>
+  <h2>Names Your Dancers Already Know</h2>
+  <p style="color:var(--white-50);font-size:13px;margin-bottom:24px">Faculty from the stages of Beyonc&eacute;, Justin Bieber, Tate McRae &amp; more. Featured on Dancing with the Stars &amp; SYTYCD. Training dancers at LSU, FSU, OSU, UCF, USD, GCU &amp; Minnesota.</p>
+  <div class="faculty-grid">
+    <div class="faculty-card">
+      <div class="faculty-avatar">KR</div>
+      <div class="faculty-name">Kaycee Rice</div>
+      <div class="faculty-credit">Guest Artist</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar">PW</div>
+      <div class="faculty-name">Phil Wright</div>
+      <div class="faculty-credit">Guest Artist</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar">MD</div>
+      <div class="faculty-name">Marguerite Derricks</div>
+      <div class="faculty-credit">Guest Artist</div>
+    </div>
+  </div>
+  <div class="faculty-grid" style="margin-top:12px">
+    <div class="faculty-card">
+      <div class="faculty-avatar">EC</div>
+      <div class="faculty-name">Emily Crouch</div>
+      <div class="faculty-credit">Faculty</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar">ED</div>
+      <div class="faculty-name">Evan DeBenedetto</div>
+      <div class="faculty-credit">Faculty</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar">RB</div>
+      <div class="faculty-name">Robbie Blue</div>
+      <div class="faculty-credit">Faculty</div>
+    </div>
+  </div>
+  <p style="color:var(--white-30);font-size:11px;margin-top:16px">*Faculty varies by location. Additional faculty: Geovanna Bortoleto, Holden Maples, Jose Tena, Emiliano Jimenez, Gheremi Clay, Nathan Cherry</p>
+</div>
+</section>
+
+<!-- ====== TESTIMONIAL ====== -->
+<section class="section">
+<div class="container">
+  <div class="text-center"><span class="tag">From Studio Owners</span><h2>Don't Take Our Word For It</h2></div>
+  <div class="test-block">
+    <p class="test-text">"MTMI handled everything. My dancers were completely transformed, parents were blown away, all without lifting a finger. We've already booked another one!"</p>
+    <div class="test-author">Sarah Mitchell</div>
+    <div class="test-role">Elevate Dance Academy, Scottsdale, AZ</div>
+  </div>
+  <div style="margin-top:32px"><button class="cta-btn" style="max-width:440px;margin:0 auto" onclick="scrollToForm()">Apply Now</button></div>
+</div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="section">
+<div class="container">
+  <div class="text-center"><span class="tag">Questions</span><h2>You're Probably Wondering...</h2></div>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <button class="faq-q" onclick="toggleFaq(this)">How much does this cost my studio?<svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+      <div class="faq-a">Nothing out of pocket. Your dancers pay for the intensive, we handle all payment collection, and you keep the profit &mdash; typically $1,000 to $5,000. The $1,000 credit comes off your costs, making your margins even better.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What if we already do our own intensive?<svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+      <div class="faq-a">Most studios that switch to us end up making more money with less work. We can complement what you already do or replace it entirely.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What's the catch with the $1,000?<svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+      <div class="faq-a">No catch. We invest in studios we believe in. If selected, the $1,000 goes directly toward lowering your intensive costs. We make our money from the event itself.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How much work is this for me?<svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+      <div class="faq-a">Almost none. We handle faculty, scheduling, logistics, and payment collection. You tell us what dates work and we take care of everything else.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== FINAL CTA ====== -->
+<section class="final-cta" id="finalCta">
+<div class="container">
+  <span class="tag">Don't Wait</span>
+  <h2>Your Competitor Saw This Ad Too.</h2>
+  <p class="final-sub">Only one studio per city gets selected. Make sure it's yours.</p>
+  <div class="form-card" id="bottomForm">
+    <div class="progress">
+      <div class="progress-dot active" id="bpd1"></div>
+      <div class="progress-dot" id="bpd2"></div>
+      <div class="progress-dot" id="bpd3"></div>
+      <div class="progress-dot" id="bpd4"></div>
+      <div class="progress-dot" id="bpd5"></div>
+    </div>
+    <div class="form-step active" id="bstep1">
+      <div class="spots"><span class="dot"></span>Limited &mdash; 1 studio per city</div>
+      <div class="step-heading">Apply For Your Studio</div>
+      <div class="step-sub">Takes 30 seconds. See if your studio qualifies.</div>
+      <div class="form-row">
+        <div>
+          <input type="text" class="form-input" placeholder="First Name" id="bfname" autocomplete="given-name">
+          <div class="error-msg" id="bfname-err">Please enter your first name</div>
+        </div>
+        <div>
+          <input type="text" class="form-input" placeholder="Last Name" id="blname" autocomplete="family-name">
+          <div class="error-msg" id="blname-err">Please enter your last name</div>
+        </div>
+      </div>
+      <button class="cta-btn" onclick="startBottom()">Apply Now</button>
+      <p class="form-note">Free to apply &bull; We review every application personally</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<div class="footer"><div class="container">&copy; 2026 More Than Motion Intensive. All rights reserved.</div></div>
+
+<!-- ====== STICKY MOBILE CTA ====== -->
+<div class="sticky-cta" id="stickyCta">
+  <button class="cta-btn" onclick="scrollToForm()">Apply For Your Studio</button>
+</div>
+
+<script>
+// ===== STATE =====
+let currentStep = 1;
+const formData = { fname: '', lname: '', email: '', phone: '', pitch: '' };
+
+// ===== MULTI-STEP FORM =====
+function nextStep(from) {
+  // Validate
+  if (from === 1) {
+    const fn = document.getElementById('fname').value.trim();
+    const ln = document.getElementById('lname').value.trim();
+    let valid = true;
+    if (!fn) { showErr('fname'); valid = false; } else { hideErr('fname'); }
+    if (!ln) { showErr('lname'); valid = false; } else { hideErr('lname'); }
+    if (!valid) return;
+    formData.fname = fn;
+    formData.lname = ln;
+  }
+  if (from === 2) {
+    const em = document.getElementById('email').value.trim();
+    if (!em || !em.includes('@') || !em.includes('.')) { showErr('email'); return; }
+    hideErr('email');
+    formData.email = em;
+  }
+  if (from === 3) {
+    const ph = document.getElementById('phone').value.trim();
+    if (!ph || ph.length < 7) { showErr('phone'); return; }
+    hideErr('phone');
+    formData.phone = ph;
+  }
+  if (from === 4) {
+    const pitch = document.getElementById('pitch').value.trim();
+    if (!pitch || pitch.length < 10) { showErr('pitch'); return; }
+    hideErr('pitch');
+    formData.pitch = pitch;
+    sendFormData();
+  }
+
+  currentStep = from + 1;
+  showStep(currentStep);
+  updateProgress(currentStep);
+
+  // Fire pixel events
+  if (from === 1) fireFBEvent('Lead', {});
+  if (from === 4) fireFBEvent('CompleteRegistration', {});
+}
+
+function prevStep(to) {
+  currentStep = to - 1;
+  showStep(currentStep);
+  updateProgress(currentStep);
+}
+
+function showStep(n) {
+  for (let i = 1; i <= 5; i++) {
+    const el = document.getElementById('step' + i);
+    if (el) el.classList.toggle('active', i === n);
+  }
+}
+
+function updateProgress(n) {
+  // Show progress bar only from step 2+
+  const bar = document.querySelector('#mainForm .progress');
+  if (bar) bar.classList.toggle('visible', n > 1);
+  for (let i = 1; i <= 5; i++) {
+    const dot = document.getElementById('pd' + i);
+    dot.classList.remove('active', 'done');
+    if (i === n) dot.classList.add('active');
+    if (i < n) dot.classList.add('done', 'active');
+  }
+}
+
+// ===== VALIDATION HELPERS =====
+function showErr(id) {
+  document.getElementById(id).classList.add('error');
+  document.getElementById(id + '-err').classList.add('show');
+}
+function hideErr(id) {
+  document.getElementById(id).classList.remove('error');
+  document.getElementById(id + '-err').classList.remove('show');
+}
+
+// ===== BOTTOM FORM =====
+function startBottom() {
+  const fn = document.getElementById('bfname').value.trim();
+  const ln = document.getElementById('blname').value.trim();
+  let valid = true;
+  if (!fn) { document.getElementById('bfname').classList.add('error'); document.getElementById('bfname-err').classList.add('show'); valid = false; }
+  else { document.getElementById('bfname').classList.remove('error'); document.getElementById('bfname-err').classList.remove('show'); }
+  if (!ln) { document.getElementById('blname').classList.add('error'); document.getElementById('blname-err').classList.add('show'); valid = false; }
+  else { document.getElementById('blname').classList.remove('error'); document.getElementById('blname-err').classList.remove('show'); }
+  if (!valid) return;
+
+  // Copy to main form and scroll up
+  document.getElementById('fname').value = fn;
+  document.getElementById('lname').value = ln;
+  formData.fname = fn;
+  formData.lname = ln;
+  currentStep = 2;
+  showStep(2);
+  updateProgress(2);
+  fireFBEvent('Lead', {});
+  document.getElementById('mainForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// ===== CALENDAR MOCK =====
+function selectDay(el) {
+  document.querySelectorAll('.cal-day').forEach(d => d.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('calTimes').style.display = 'grid';
+  document.getElementById('bookBtn').style.display = 'none';
+}
+function selectTime(el) {
+  document.querySelectorAll('.cal-time').forEach(t => t.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('bookBtn').style.display = 'block';
+}
+function bookCall() {
+  fireFBEvent('Schedule', {});
+  document.getElementById('step5').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  // Hide progress dots
+  document.querySelector('#mainForm .progress').style.display = 'none';
+}
+
+// ===== FAQ =====
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(x => x.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ===== STICKY CTA =====
+const hero = document.getElementById('hero');
+const stickyCta = document.getElementById('stickyCta');
+let stickyVisible = false;
+
+function checkSticky() {
+  const heroBottom = hero.getBoundingClientRect().bottom;
+  const shouldShow = heroBottom < 0 && currentStep <= 1;
+  if (shouldShow !== stickyVisible) {
+    stickyVisible = shouldShow;
+    stickyCta.classList.toggle('visible', shouldShow);
+  }
+}
+window.addEventListener('scroll', checkSticky, { passive: true });
+
+function scrollToForm() {
+  document.getElementById('mainForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// ===== FORM SUBMISSION (Email Notification) =====
+function sendFormData() {
+  // Replace [YOUR_FORMSPREE_ID] with your Formspree endpoint
+  // Sign up free at formspree.io, create a form, and paste the ID below
+  const endpoint = 'https://formspree.io/f/[YOUR_FORMSPREE_ID]';
+
+  fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      name: formData.fname + ' ' + formData.lname,
+      email: formData.email,
+      phone: formData.phone,
+      pitch: formData.pitch,
+      _subject: 'New Studio Application: ' + formData.fname + ' ' + formData.lname,
+    })
+  }).catch(function() {
+    // Silently fail — don't interrupt UX. Data is also in the pixel events.
+  });
+}
+
+// ===== FB PIXEL HELPER =====
+function fireFBEvent(event, params) {
+  if (typeof fbq === 'function') {
+    fbq('track', event, params);
+  }
+}
+
+// ===== PHONE FORMATTING =====
+document.getElementById('phone').addEventListener('input', function(e) {
+  let val = e.target.value.replace(/\D/g, '');
+  if (val.length > 10) val = val.slice(0, 10);
+  if (val.length >= 7) {
+    e.target.value = '(' + val.slice(0,3) + ') ' + val.slice(3,6) + '-' + val.slice(6);
+  } else if (val.length >= 4) {
+    e.target.value = '(' + val.slice(0,3) + ') ' + val.slice(3);
+  } else if (val.length > 0) {
+    e.target.value = '(' + val;
+  }
+});
+
+// ===== ENTER KEY SUPPORT =====
+document.querySelectorAll('.form-input').forEach(function(input) {
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const step = input.closest('.form-step');
+      if (step) {
+        const btn = step.querySelector('.cta-btn');
+        if (btn) btn.click();
+      }
+    }
+  });
+});
+
+// ===== ANIMATED COUNTER =====
+function animateCounters() {
+  const nums = document.querySelectorAll('.proof-num[data-target]');
+  nums.forEach(function(el) {
+    const target = parseInt(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1800;
+    const startTime = performance.now();
+
+    function easeOutExpo(t) {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    }
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutExpo(progress);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  });
+}
+
+// Trigger counters when proof bar scrolls into view
+let countersTriggered = false;
+const proofBar = document.getElementById('proofBar');
+
+function checkCounters() {
+  if (countersTriggered || !proofBar) return;
+  const rect = proofBar.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.85) {
+    countersTriggered = true;
+    animateCounters();
+  }
+}
+window.addEventListener('scroll', checkCounters, { passive: true });
+checkCounters(); // Check on load in case already visible
+</script>
+</body>
+</html>
