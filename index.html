@@ -55,14 +55,6 @@ h1,h2,.step-heading,.form-success h3,.final-cta h2,.credits-names,.benefit-title
 .container{max-width:720px;margin:0 auto;padding:0 20px}
 .text-center{text-align:center}
 
-/* ========== URGENCY BAR ========== */
-.urgency-bar{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));text-align:center;padding:10px 16px;color:var(--black);
-  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-}
-body{padding-top:38px}
-
 /* ========== HERO ========== */
 .hero{padding:20px 0 16px;position:relative}
 .hero::after{display:none}
@@ -246,18 +238,19 @@ textarea.form-input{
   font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
   color:var(--white-50);margin-bottom:14px;
 }
-.credits-names{
-  font-size:clamp(16px,3.8vw,26px);font-weight:800;
-  color:var(--white);line-height:1.5;letter-spacing:-.01em;
+.credits-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  margin-bottom:16px;
 }
-.credits-names .sep{
-  color:var(--gold);margin:0 6px;font-weight:400;opacity:.5;
+.credit-card{text-align:center}
+.credit-avatar{
+  width:100px;height:100px;border-radius:50%;margin:0 auto 10px;
+  overflow:hidden;border:2px solid var(--white-10);
 }
-.credits-names .name{
-  color:var(--white-90);
-  background:linear-gradient(180deg,var(--white) 0%,var(--white-70) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
+.credit-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.credit-name{
+  font-family:'General Sans','Inter',sans-serif;
+  font-size:14px;font-weight:700;color:var(--white);
 }
 .credits-sub{
   margin-top:12px;font-size:13px;color:var(--gold);font-weight:600;
@@ -422,8 +415,6 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 
 /* ========== RESPONSIVE ========== */
 @media(max-width:480px){
-  .urgency-bar{font-size:11px;padding:8px 12px}
-  body{padding-top:34px}
   .hero{padding:16px 0 12px}
   .form-card{padding:20px 16px}
   .form-row{grid-template-columns:1fr}
@@ -439,8 +430,9 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
   .cal-grid{gap:2px}
   .cal-day{font-size:12px}
   .credits-banner{padding:20px 0}
-  .credits-names{font-size:clamp(11px,3vw,16px);line-height:1.4;white-space:nowrap}
-  .credits-names .sep{margin:0 3px}
+  .credits-grid{gap:10px}
+  .credit-avatar{width:72px;height:72px}
+  .credit-name{font-size:12px}
   .credits-sub{font-size:11px}
   .gallery-grid{grid-template-columns:1fr 1fr;gap:3px}
   .gallery-grid img{height:200px}
@@ -452,8 +444,6 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 </head>
 <body>
 
-<!-- ====== URGENCY BAR ====== -->
-<div class="urgency-bar">ONE STUDIO PER CITY. APPLY NOW.</div>
 
 <!-- ====== HERO ====== -->
 <section class="hero" id="hero">
@@ -564,8 +554,23 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 <section class="credits-banner fade-up">
 <div class="container">
   <div class="credits-label">Our Faculty Have Worked With</div>
-  <div class="credits-names">
-    <span class="name">Beyonc&eacute;</span><span class="sep">&bull;</span><span class="name">Justin Bieber</span><span class="sep">&bull;</span><span class="name">Tate McRae</span><span class="sep">&bull;</span><span class="name">Nicki Minaj</span>
+  <div class="credits-grid">
+    <div class="credit-card">
+      <div class="credit-avatar"><img src="beyonce.png" alt="Beyoncé" loading="lazy"></div>
+      <div class="credit-name">Beyonc&eacute;</div>
+    </div>
+    <div class="credit-card">
+      <div class="credit-avatar"><img src="bieber.png" alt="Justin Bieber" loading="lazy"></div>
+      <div class="credit-name">Justin Bieber</div>
+    </div>
+    <div class="credit-card">
+      <div class="credit-avatar"><img src="tate.png" alt="Tate McRae" loading="lazy"></div>
+      <div class="credit-name">Tate McRae</div>
+    </div>
+    <div class="credit-card">
+      <div class="credit-avatar"><img src="nicki.png" alt="Nicki Minaj" loading="lazy"></div>
+      <div class="credit-name">Nicki Minaj</div>
+    </div>
   </div>
   <div class="credits-sub">As Seen On: Dancing with the Stars &bull; So You Think You Can Dance</div>
 </div>
