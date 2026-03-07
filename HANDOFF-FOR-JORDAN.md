@@ -1,42 +1,73 @@
-# More Than Motion - Landing Page Handoff
+# MTMI Landing Page - Everything You Need
 
-Hi Jordan! Here's everything you need to use and manage your new landing page.
+Hi Jordan! Matt built you a landing page for the In-Studio Intensives. This document walks you through everything step by step. You don't need to be technical - just follow along.
 
-## What You Have
 
-A high-converting landing page for MTMI In-Studio Intensives. It lives at:
+## Your Landing Page Is Already Live
+
 **https://more-than-motion.vercel.app**
 
-Right now, every form submission emails **info@morethanmotionintensive.com** with the applicant's name, email, phone, and studio info.
+You can start sending traffic to this URL right now. The form works - when someone fills it out, you'll get an email at info@morethanmotionintensive.com.
 
 
-## 3 Things You Need To Set Up
-
-### 1. Activate Email Notifications (2 minutes)
-
-The first time someone submits the form, you'll get a confirmation email at **info@morethanmotionintensive.com** from FormSubmit.co. **Click the confirmation link** in that email. After that, every new application goes straight to your inbox automatically.
-
-Each email includes:
-- Name
-- Email
-- Phone
-- About their studio
+---
 
 
-### 2. Set Up Google Sheets Tracking (10 minutes)
+## STEP 1: Activate Email Notifications (2 minutes)
 
-This logs every application to a Google Sheet so you can track everything in one place.
+The form sends applications to your email, but it needs a one-time confirmation.
 
-**Step 1:** Create a new Google Sheet. Name the columns in Row 1:
+1. Go to the live site: https://more-than-motion.vercel.app
+2. Fill out the form yourself with test info and submit it
+3. Check your inbox at **info@morethanmotionintensive.com** for an email from FormSubmit.co
+4. Click the confirmation link in that email
+5. Done! Every future application will arrive in your inbox automatically
+
+Each email will include: Name, Email, Phone, and what they wrote about their studio.
+
+
+---
+
+
+## STEP 2: Add Your Facebook Pixel (5 minutes)
+
+The pixel code is already built into the page - you just need to plug in your Pixel ID so Meta can track who visits and who applies.
+
+1. Go to business.facebook.com > Events Manager
+2. Find your Pixel ID (it's a long number, like 123456789012345)
+3. You'll need to edit the code file (see "How To Make Changes" below)
+4. In the file, press Cmd+F and search for `[YOUR_PIXEL_ID]`
+5. You'll find it in 3 places. Replace `[YOUR_PIXEL_ID]` with your actual number in all 3 spots
+6. Save and redeploy (instructions below)
+
+What the pixel tracks (already set up):
+- **Someone visits the page** - so you can retarget them
+- **Someone starts the form** - so you know they're interested
+- **Someone submits the form** - so you can track conversions from your ads
+
+
+---
+
+
+## STEP 3: Set Up Google Sheets Tracking (10 minutes, optional)
+
+This is optional but recommended. It logs every application to a Google Sheet so you can see them all in one place and track who you've followed up with.
+
+**Create the Sheet:**
+1. Go to sheets.google.com and create a new spreadsheet
+2. In Row 1, type these column headers:
+   - A1: `Timestamp`
+   - B1: `Name`
+   - C1: `Email`
+   - D1: `Phone`
+   - E1: `About Studio`
+
+**Add the Script:**
+3. In your Google Sheet, click **Extensions** (in the top menu) > **Apps Script**
+4. It opens a code editor. Delete everything that's already there
+5. Copy and paste this entire block:
+
 ```
-A1: Timestamp | B1: Name | C1: Email | D1: Phone | E1: About Studio
-```
-
-**Step 2:** Go to Extensions > Apps Script
-
-**Step 3:** Delete everything in the editor and paste this:
-
-```javascript
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = JSON.parse(e.postData.contents);
@@ -51,128 +82,156 @@ function doPost(e) {
 }
 ```
 
-**Step 4:** Click Deploy > New Deployment
-- Type: Web app
-- Execute as: Me
-- Who has access: Anyone
-- Click Deploy
-- Authorize it when prompted (click through any "unsafe" warnings - it's your own script)
-- Copy the URL it gives you
+6. Click the blue **Deploy** button > **New deployment**
+7. Next to "Select type", click the gear icon and choose **Web app**
+8. Set "Execute as" to **Me**
+9. Set "Who has access" to **Anyone**
+10. Click **Deploy**
+11. It will ask you to authorize - click through the warnings (it's your own script, it's safe)
+12. It will show you a URL that starts with `https://script.google.com/macros/...` - **copy that URL**
 
-**Step 5:** In your landing page code (index.html), find this line near the bottom:
-```
-var sheetsURL = window.GOOGLE_SHEETS_URL;
-```
-Replace it with your actual URL:
-```
-var sheetsURL = 'https://script.google.com/macros/s/YOUR_ID_HERE/exec';
-```
-
-Deploy again and you're done. Every application will appear as a new row in your sheet.
+**Connect It to the Landing Page:**
+13. Open the index.html file (see "How To Make Changes" below)
+14. Press Cmd+F and search for `window.GOOGLE_SHEETS_URL`
+15. Replace that whole line:
+    - Old: `var sheetsURL = window.GOOGLE_SHEETS_URL;`
+    - New: `var sheetsURL = 'https://script.google.com/macros/s/YOUR_URL_HERE/exec';`
+    (paste the URL you copied in step 12)
+16. Save and redeploy
 
 
-### 3. Set Up Facebook Pixel (5 minutes)
-
-The pixel code is already in the page - you just need to add your Pixel ID.
-
-**Step 1:** Go to Meta Events Manager (business.facebook.com > Events Manager)
-
-**Step 2:** Copy your Pixel ID (it's a long number like 123456789012345)
-
-**Step 3:** In index.html, find these 3 lines and replace `[YOUR_PIXEL_ID]` with your actual ID:
-```
-fbq('init','[YOUR_PIXEL_ID]');
-```
-and
-```
-src="https://www.facebook.com/tr?id=[YOUR_PIXEL_ID]&ev=PageView&noscript=1"
-```
-
-The pixel already tracks these events:
-- **PageView** - when someone lands on the page
-- **Lead** - when someone enters their name (step 1)
-- **CompleteRegistration** - when someone submits the full application
-
-These events let you build retargeting audiences and track ad conversions.
+---
 
 
 ## How To Use This With Your Squarespace Site
 
-Your current site is on Squarespace. You have two options:
+Your Squarespace site stays exactly as it is. This landing page is separate - use it for:
+- **Ad traffic** - Point your Facebook/Instagram ads to https://more-than-motion.vercel.app
+- **Link in bio** - Use the Vercel URL in your Instagram bio for "Apply for In-Studio"
+- **Squarespace button** - Add a button on your Squarespace site that links to the Vercel URL
 
-### Option A: Link To It (Easiest)
-Just add a link/button on your Squarespace site that points to:
-`https://more-than-motion.vercel.app`
-
-Use this for your ads - send ad traffic directly to this URL. Keep your main Squarespace site as-is for organic visitors.
-
-### Option B: Replace Your "MTMI In Studio" Page
-In Squarespace, you can redirect your /services-6-1 page to the Vercel landing page:
-1. Go to Settings > Advanced > URL Mappings
-2. Add: `/services-6-1 -> https://more-than-motion.vercel.app 301`
-
-### Option C: Use a Custom Domain
-If you want this page on something like `apply.morethanmotionintensive.com`:
-1. In your domain registrar, add a CNAME record:
-   - Name: `apply`
-   - Value: `cname.vercel-dns.com`
-2. In Vercel (vercel.com), go to the project settings > Domains > Add `apply.morethanmotionintensive.com`
+You don't need to touch your Squarespace site at all. This is a separate page designed specifically for converting ad traffic into applications.
 
 
-## How To Edit The Page
+---
 
-The entire page is one file: **index.html**
 
-### To edit text:
-Open index.html in any text editor (even TextEdit on Mac works). Search for the text you want to change and update it.
+## How To Make Changes
 
-Common things to edit:
-- **Headline:** Search for "Earn $2,000+"
-- **Subtext:** Search for "We bring elite faculty"
-- **Faculty names:** Search for "Kaycee Rice", "Phil Wright", etc.
-- **Testimonial:** Search for "Sarah Mitchell"
-- **FAQ answers:** Search for "faq-a"
-- **Banner text:** Search for "ONE STUDIO PER CITY"
+You have two options: use AI to help you, or edit manually.
 
-### To add photos:
-1. Put your image files in the same folder as index.html
-2. In the code, find the gallery section (search for "gallery-grid")
-3. Replace the image filenames with yours:
-```html
-<img src="your-photo-name.png" alt="description" loading="lazy">
+### Option A: Use Claude Code (Recommended - Easiest)
+
+Claude Code is an AI that can edit the site for you. You just tell it what you want in plain English.
+
+**First-time setup (10 minutes):**
+1. Open the **Terminal** app on your Mac (search for "Terminal" in Spotlight)
+2. Install Claude Code by pasting this and pressing Enter:
+   ```
+   npm install -g @anthropic-ai/claude-code
+   ```
+   (If it says npm is not found, first install Node.js from https://nodejs.org - download the LTS version, install it, then try again)
+
+3. Download your project files by pasting this and pressing Enter:
+   ```
+   cd ~/Desktop && git clone https://github.com/matthewdecelles/more-than-motion.git
+   ```
+   This creates a folder called "more-than-motion" on your Desktop.
+
+4. Go into the folder:
+   ```
+   cd ~/Desktop/more-than-motion
+   ```
+
+5. Start Claude Code:
+   ```
+   claude
+   ```
+
+6. It will ask you to log in the first time. Follow the prompts.
+
+**Making changes:**
+Once Claude Code is running, just type what you want in plain English. Examples:
+
+- "Change the headline to say 'Bring MTMI To Your Studio'"
+- "Add a new FAQ question: 'What ages is this for?' with the answer 'Dancers ages 10-18'"
+- "Change the testimonial name to Jessica Park from Spark Dance Studio"
+- "Swap the Instagram embed for this YouTube video: https://youtube.com/watch?v=xxxxx"
+- "Add a new faculty member named Sam Nelson as a Guest Artist"
+- "Remove the tour dates section"
+- "Deploy the site"
+
+Claude will make the changes and can deploy them for you. Just talk to it like you would a person.
+
+### Option B: Edit Manually
+
+1. Open the "more-than-motion" folder on your Desktop
+2. Right-click **index.html** > Open With > TextEdit (or any text editor)
+3. Use Cmd+F to find the text you want to change
+4. Edit it, save the file
+5. To deploy, open Terminal and run:
+   ```
+   cd ~/Desktop/more-than-motion && npx vercel --prod
+   ```
+
+
+---
+
+
+## How To Deploy After Making Changes
+
+Every time you make changes, you need to deploy so the live site updates.
+
+**Option 1: From Claude Code** - Just type "deploy the site" and Claude will do it.
+
+**Option 2: From Terminal** - Open Terminal and run:
+```
+cd ~/Desktop/more-than-motion && npx vercel --prod
+```
+The first time, it will ask you to log in to Vercel (free account). After that, it just works.
+
+**Option 3: Drag and Drop** - Go to vercel.com/new in your browser and drag the entire "more-than-motion" folder onto the page. It will deploy automatically.
+
+
+---
+
+
+## What's In The Folder
+
+```
+index.html              - Your entire landing page (the only file that matters)
+CLAUDE.md               - Tells Claude Code about your site (don't delete this)
+HANDOFF-FOR-JORDAN.md   - This document you're reading
+strategy.md             - Growth playbook with ad scripts and follow-up sequences
 ```
 
-### To deploy changes:
-If you have Vercel CLI installed, run:
-```
-npx vercel --prod
-```
-Or drag-and-drop the folder to vercel.com/new
+
+---
 
 
-## Content From Your Current Site To Add
+## Quick Reference: Common Edits
 
-Your Squarespace site has great content that could strengthen this landing page. Consider adding:
+| What you want to change | Search for this in index.html |
+|------------------------|-------------------------------|
+| Main headline | `Earn $2,000+` |
+| Subtext under headline | `We bring elite faculty` |
+| Banner at top | `ONE STUDIO PER CITY` |
+| Faculty names | `Kaycee Rice` or `Phil Wright` etc. |
+| Testimonial quote | `MTMI handled everything` |
+| Testimonial name | `Sarah Mitchell` |
+| FAQ questions | `faq-q` |
+| FAQ answers | `faq-a` |
+| Tour dates | `tour-card` |
+| Gallery photos | `gallery-grid` |
+| Form heading | `Apply For Your Studio` |
+| Facebook Pixel ID | `[YOUR_PIXEL_ID]` |
+| Google Sheets URL | `GOOGLE_SHEETS_URL` |
 
-- **2026 Tour dates** (Lincoln NE - Sold Out, Santa Cruz CA - Sold Out, Seattle WA - Open, Tucson AZ - Sold Out) - "Sold Out" dates are powerful social proof
-- **Real photos** from your Squarespace gallery to replace placeholder images
-- **Video content** if you have highlight reels or testimonial videos
-- **More testimonials** from studio owners
-- **Your mission statement** about serving "dancers around the world"
-- **The journal session, on-camera video shoot, and Q&A** details are great differentiators
+
+---
 
 
-## File List
+## Need Help?
 
-```
-index.html          - The entire landing page (all code in one file)
-group-energy.png    - Gallery photo placeholder
-studio-dance.png    - Gallery photo placeholder
-floor-move.png      - Gallery photo placeholder
-hero-collage.png    - Gallery photo placeholder
-strategy.md         - Growth playbook with ad scripts, follow-up sequences, etc.
-```
-
-## Questions?
-
-Text Matt or email info@morethanmotionintensive.com
+- Text Matt
+- Or if you're using Claude Code, just ask it - it knows everything about this site
