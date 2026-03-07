@@ -29,7 +29,7 @@ fbq('track','PageView');
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=General+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -45,6 +45,11 @@ fbq('track','PageView');
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+h1,h2,.step-heading,.form-success h3,.final-cta h2,.credits-names,.benefit-title,.step-title-text,.faculty-name{font-family:'General Sans','Inter',sans-serif}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
 
 /* Utility */
 .container{max-width:720px;margin:0 auto;padding:0 20px}
@@ -53,15 +58,13 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 /* ========== URGENCY BAR ========== */
 .urgency-bar{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:var(--red);text-align:center;padding:10px 16px;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));text-align:center;padding:10px 16px;color:var(--black);
   font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  animation:urgencyPulse 2.5s ease-in-out infinite;
 }
-@keyframes urgencyPulse{0%,100%{background:var(--red)}50%{background:var(--red-dark)}}
 body{padding-top:38px}
 
 /* ========== HERO ========== */
-.hero{padding:48px 0 40px;position:relative}
+.hero{padding:20px 0 16px;position:relative}
 .hero::after{display:none}
 .badge{
   display:inline-block;
@@ -69,9 +72,9 @@ body{padding-top:38px}
   font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   padding:6px 14px;border-radius:var(--radius-full);margin-bottom:20px;
 }
-h1{font-size:clamp(26px,6vw,44px);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:16px}
+h1{font-size:clamp(26px,6vw,44px);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:10px}
 h1 .hl{color:var(--gold)}
-.hero-sub{font-size:clamp(15px,3.5vw,18px);color:var(--white-50);max-width:520px;margin:0 auto 20px;line-height:1.6}
+.hero-sub{font-size:clamp(15px,3.5vw,17px);color:var(--white-50);max-width:520px;margin:0 auto 16px;line-height:1.55}
 .hero-sub strong{color:var(--white-90);font-weight:600}
 
 /* ========== FORM CARD ========== */
@@ -79,9 +82,10 @@ h1 .hl{color:var(--gold)}
   background:var(--black-2);
   border:1px solid var(--white-10);
   border-radius:var(--radius-lg);
-  padding:28px 24px;
+  padding:24px 22px;
   max-width:440px;margin:0 auto;
   position:relative;overflow:hidden;
+  box-shadow:0 4px 40px rgba(0,0,0,.4),0 0 80px rgba(212,168,67,.03);
 }
 .form-card::before{
   content:'';position:absolute;top:-1px;left:-1px;right:-1px;
@@ -90,8 +94,7 @@ h1 .hl{color:var(--gold)}
 }
 
 /* Progress Bar — hidden on step 1, visible after */
-.progress{display:flex;gap:6px;margin-bottom:24px;opacity:0;height:0;overflow:hidden;transition:opacity .3s ease,height .3s ease,margin .3s ease;margin-bottom:0}
-.progress.visible{opacity:1;height:3px;margin-bottom:24px}
+.progress{display:none}
 .progress-dot{
   flex:1;height:3px;border-radius:2px;
   background:var(--white-10);transition:background .4s ease;
@@ -105,8 +108,8 @@ h1 .hl{color:var(--gold)}
 @keyframes fadeSlideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 .step-label{font-size:13px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.step-heading{font-size:20px;font-weight:800;margin-bottom:4px;line-height:1.2}
-.step-sub{font-size:13px;color:var(--white-50);margin-bottom:20px;line-height:1.5}
+.step-heading{font-size:20px;font-weight:800;margin-bottom:12px;line-height:1.2;text-align:center}
+.step-sub{font-size:13px;color:var(--white-50);margin-bottom:16px;line-height:1.5}
 
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .form-row.single{grid-template-columns:1fr}
@@ -155,7 +158,7 @@ textarea.form-input{
 .back-btn svg{width:16px;height:16px}
 
 .form-note{text-align:center;font-size:11px;color:var(--white-30);margin-top:12px;line-height:1.5}
-.spots{text-align:center;margin-bottom:10px;font-size:13px;font-weight:600;color:var(--red)}
+.spots{text-align:center;margin-bottom:16px;font-size:13px;font-weight:600;color:var(--red)}
 .spots .dot{display:inline-block;width:7px;height:7px;background:var(--red);border-radius:50%;margin-right:5px;animation:blink 1.5s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
@@ -228,7 +231,7 @@ textarea.form-input{
 
 /* ========== CREDITS BANNER ========== */
 .credits-banner{
-  padding:40px 0;
+  padding:28px 0;
   background:linear-gradient(180deg,rgba(212,168,67,.08) 0%,rgba(212,168,67,.02) 100%);
   border-top:1px solid var(--gold-15);
   border-bottom:1px solid var(--gold-15);
@@ -244,7 +247,7 @@ textarea.form-input{
   color:var(--white-50);margin-bottom:14px;
 }
 .credits-names{
-  font-size:clamp(18px,4vw,26px);font-weight:800;
+  font-size:clamp(16px,3.8vw,26px);font-weight:800;
   color:var(--white);line-height:1.5;letter-spacing:-.01em;
 }
 .credits-names .sep{
@@ -306,12 +309,28 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 .play-btn svg{margin-left:3px}
 .vid-cap{font-size:12px;color:var(--white-30);font-weight:500}
 
+/* ========== TOUR DATES ========== */
+.tour-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tour-card{
+  background:var(--white-03);border:1px solid var(--white-06);
+  border-radius:var(--radius);padding:20px 16px;text-align:center;
+  transition:border-color .25s ease;
+}
+.tour-card.sold-out{opacity:.6}
+.tour-city{font-family:'General Sans','Inter',sans-serif;font-size:16px;font-weight:700;margin-bottom:2px}
+.tour-date{font-size:13px;color:var(--white-50);margin-bottom:8px}
+.tour-status{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:var(--radius-full);display:inline-block}
+.status-sold{background:rgba(239,68,68,.12);color:var(--red)}
+.status-open{background:var(--green-15);color:var(--green)}
+
 /* ========== BENEFITS ========== */
 .benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .benefit-card{
   background:var(--white-03);border:1px solid var(--white-06);
   border-radius:var(--radius);padding:20px 16px;
+  transition:border-color .25s ease,transform .25s ease;
 }
+.benefit-card:hover{border-color:var(--gold-20);transform:translateY(-2px)}
 .benefit-icon{font-size:24px;margin-bottom:10px}
 .benefit-title{font-size:15px;font-weight:700;margin-bottom:4px}
 .benefit-desc{font-size:13px;color:var(--white-50);line-height:1.5}
@@ -333,7 +352,9 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 .faculty-card{
   background:var(--white-03);border:1px solid var(--white-06);
   border-radius:var(--radius);padding:20px 12px;text-align:center;
+  transition:border-color .25s ease,transform .25s ease;
 }
+.faculty-card:hover{border-color:var(--gold-20);transform:translateY(-2px)}
 .faculty-avatar{
   width:64px;height:64px;
   background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));
@@ -404,8 +425,8 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 @media(max-width:480px){
   .urgency-bar{font-size:11px;padding:8px 12px}
   body{padding-top:34px}
-  .hero{padding:36px 0 32px}
-  .form-card{padding:24px 18px}
+  .hero{padding:16px 0 12px}
+  .form-card{padding:20px 16px}
   .form-row{grid-template-columns:1fr}
   .proof-stats{grid-template-columns:repeat(3,1fr);gap:8px}
   .proof-num{font-size:20px}
@@ -418,7 +439,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
   .faculty-credit{font-size:10px}
   .cal-grid{gap:2px}
   .cal-day{font-size:12px}
-  .credits-banner{padding:28px 0}
+  .credits-banner{padding:20px 0}
   .credits-names{font-size:clamp(11px,3vw,16px);line-height:1.4;white-space:nowrap}
   .credits-names .sep{margin:0 3px}
   .credits-sub{font-size:11px}
@@ -433,14 +454,13 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 <body>
 
 <!-- ====== URGENCY BAR ====== -->
-<div class="urgency-bar">&#9889; Only 1 studio per city!<br><span style="font-weight:500;opacity:.9;font-size:0.85em">Apply now or send this page to your studio owner!</span></div>
+<div class="urgency-bar">ONE STUDIO PER CITY. APPLY NOW.</div>
 
 <!-- ====== HERO ====== -->
 <section class="hero" id="hero">
 <div class="container text-center">
-  <div class="badge">By Application Only</div>
-  <h1>We're Picking <span class="hl">ONE Studio</span> and Giving Them <span class="hl">$1,000</span> and Making Their Dancers <span class="hl">ELITE</span></h1>
-  <p class="hero-sub">Get a <strong style="text-transform:uppercase">fully produced dance intensive</strong> at your studio. We handle <strong>EVERYTHING.</strong></p>
+  <h1>Earn <span class="hl">$2,000+</span> From a <span class="hl">Fully Produced Intensive</span> Without Lifting a Finger</h1>
+  <p class="hero-sub">We bring elite faculty, handle all the logistics,<br>and your studio keeps the profit.</p>
 
   <!-- ====== MULTI-STEP FORM ====== -->
   <div class="form-card" id="mainForm">
@@ -455,7 +475,6 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 
     <!-- STEP 1: Name -->
     <div class="form-step active" id="step1">
-      <div class="spots"><span class="dot"></span>Extremely Limited: 1 Studio per City!</div>
       <div class="step-heading">Apply For Your Studio</div>
       <div class="form-row">
         <div>
@@ -467,8 +486,8 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
           <div class="error-msg" id="lname-err">Please enter your last name</div>
         </div>
       </div>
-      <button class="cta-btn" onclick="nextStep(1)">Apply Now</button>
-      <p class="form-note" style="color:var(--gold);font-size:12px;font-weight:600">Apply now before your competitor does&hellip; 1 slot available!</p>
+      <button class="cta-btn" onclick="nextStep(1)">Continue</button>
+      <p class="form-note">Takes about 30 seconds. We review every application personally.</p>
     </div>
 
     <!-- STEP 2: Email -->
@@ -505,89 +524,22 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
     <div class="form-step" id="step4">
       <button class="back-btn" onclick="prevStep(4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
       <div class="step-label">Final Step</div>
-      <div class="step-heading">Why should your studio win?</div>
-      <div class="step-sub">Tell us why your studio deserves to win. This will be reviewed against other studios so make it count :)</div>
+      <div class="step-heading">Tell us about your studio</div>
+      <div class="step-sub">How many students do you have? What styles do you teach? Anything else we should know.</div>
       <div class="form-row single">
         <div>
-          <textarea class="form-input" placeholder="We deserve this because..." id="pitch" rows="5"></textarea>
+          <textarea class="form-input" placeholder="We have about 200 students and focus on contemporary, jazz, and hip hop..." id="pitch" rows="5"></textarea>
           <div class="error-msg" id="pitch-err">Tell us a little about your studio</div>
         </div>
       </div>
       <button class="cta-btn" onclick="nextStep(4)">Submit Application &rarr;</button>
     </div>
 
-    <!-- STEP 5: Calendar Booking -->
+    <!-- STEP 5: Thank You -->
     <div class="form-step" id="step5">
-      <div class="step-heading" style="margin-bottom:2px">You're In! 🎉</div>
-      <div class="step-sub" style="margin-bottom:0">One last thing! Book a quick call so we can customize your intensive.</div>
-
-      <!-- Cal.com Placeholder -->
-      <div class="cal-placeholder">
-        <div class="cal-header">
-          <div class="cal-header-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <div>
-            <div class="cal-header-text">Book Your Call</div>
-            <div class="cal-header-sub">15 min &bull; Strategy Call</div>
-          </div>
-        </div>
-
-        <!-- Mock Calendar -->
-        <div class="cal-grid">
-          <div class="cal-day-label">Sun</div><div class="cal-day-label">Mon</div><div class="cal-day-label">Tue</div><div class="cal-day-label">Wed</div><div class="cal-day-label">Thu</div><div class="cal-day-label">Fri</div><div class="cal-day-label">Sat</div>
-          <div class="cal-day disabled"></div>
-          <div class="cal-day disabled"></div>
-          <div class="cal-day disabled"></div>
-          <div class="cal-day disabled">1</div>
-          <div class="cal-day disabled">2</div>
-          <div class="cal-day disabled">3</div>
-          <div class="cal-day disabled">4</div>
-          <div class="cal-day disabled">5</div>
-          <div class="cal-day disabled">6</div>
-          <div class="cal-day disabled">7</div>
-          <div class="cal-day disabled">8</div>
-          <div class="cal-day" onclick="selectDay(this)">9</div>
-          <div class="cal-day" onclick="selectDay(this)">10</div>
-          <div class="cal-day" onclick="selectDay(this)">11</div>
-          <div class="cal-day" onclick="selectDay(this)">12</div>
-          <div class="cal-day" onclick="selectDay(this)">13</div>
-          <div class="cal-day" onclick="selectDay(this)">14</div>
-          <div class="cal-day" onclick="selectDay(this)">15</div>
-          <div class="cal-day" onclick="selectDay(this)">16</div>
-          <div class="cal-day" onclick="selectDay(this)">17</div>
-          <div class="cal-day" onclick="selectDay(this)">18</div>
-          <div class="cal-day" onclick="selectDay(this)">19</div>
-          <div class="cal-day" onclick="selectDay(this)">20</div>
-          <div class="cal-day" onclick="selectDay(this)">21</div>
-          <div class="cal-day" onclick="selectDay(this)">22</div>
-          <div class="cal-day" onclick="selectDay(this)">23</div>
-          <div class="cal-day" onclick="selectDay(this)">24</div>
-          <div class="cal-day" onclick="selectDay(this)">25</div>
-          <div class="cal-day" onclick="selectDay(this)">26</div>
-          <div class="cal-day" onclick="selectDay(this)">27</div>
-          <div class="cal-day" onclick="selectDay(this)">28</div>
-          <div class="cal-day" onclick="selectDay(this)">29</div>
-          <div class="cal-day" onclick="selectDay(this)">30</div>
-          <div class="cal-day" onclick="selectDay(this)">31</div>
-        </div>
-
-        <div class="cal-times" id="calTimes" style="display:none">
-          <div class="cal-time" onclick="selectTime(this)">10:00 AM</div>
-          <div class="cal-time" onclick="selectTime(this)">11:00 AM</div>
-          <div class="cal-time" onclick="selectTime(this)">1:00 PM</div>
-          <div class="cal-time" onclick="selectTime(this)">2:00 PM</div>
-          <div class="cal-time" onclick="selectTime(this)">3:00 PM</div>
-          <div class="cal-time" onclick="selectTime(this)">4:00 PM</div>
-        </div>
-
-        <button class="cta-btn" id="bookBtn" style="display:none;margin-top:16px" onclick="bookCall()">Confirm Booking &rarr;</button>
-
-        <div class="cal-note">
-          <!-- Replace this entire cal-placeholder div with your Cal.com embed -->
-          <br>Placeholder &mdash; Replace with Cal.com embed code
-        </div>
-      </div>
+      <div class="chk">&#10003;</div>
+      <div class="step-heading">Thank You!</div>
+      <div class="step-sub" style="margin-bottom:0">We'll review your application and get back to you shortly.</div>
     </div>
 
     <!-- SUCCESS: After Booking -->
@@ -610,7 +562,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 </section>
 
 <!-- ====== CREDITS BANNER ====== -->
-<section class="credits-banner">
+<section class="credits-banner fade-up">
 <div class="container">
   <div class="credits-label">Our Faculty Have Worked With</div>
   <div class="credits-names">
@@ -623,29 +575,63 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 <!-- ====== PHOTO GALLERY ====== -->
 <section class="gallery">
   <div class="gallery-grid">
-    <img src="group-energy.png" alt="MTMI intensive group energy" loading="lazy">
-    <img src="studio-dance.png" alt="Studio dance session" loading="lazy">
-    <img src="floor-move.png" alt="Dancer performing" loading="lazy">
-    <img src="hero-collage.png" alt="More Than Motion highlights" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/61572443-192e-4f4e-8a1d-0d272c8e8453/tempImage2Hluz6.jpg" alt="MTMI intensive group energy" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/a797db8e-5dea-4395-8e00-786cdf0e810e/82ED115F-D778-449A-913B-BC2A4BDFCA8D_L0_001-8_8_2023%2C+1_27_01+PM.jpg" alt="Studio dance session" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/106ff81d-ce3e-4a49-8fe8-49b4dee406ff/2C179C0B-FA71-42EB-9296-6F7F52321507_L0_001-8_24_2023%2C+3_49_25+PM.jpg" alt="Dancer performing" loading="lazy">
+    <img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/8450669e-3714-41fb-8871-8de3ccf36877/mtmpicreplace.jpg" alt="More Than Motion highlights" loading="lazy">
   </div>
 </section>
 
+<!-- ====== 2026 TOUR ====== -->
+<section class="section fade-up">
+<div class="container text-center">
+  <span class="tag">2026 Tour</span>
+  <h2>Studios Are Filling Up Fast</h2>
+  <div class="tour-grid">
+    <div class="tour-card sold-out">
+      <div class="tour-city">Lincoln, NE</div>
+      <div class="tour-date">May 16&ndash;17</div>
+      <div class="tour-status status-sold">Sold Out</div>
+    </div>
+    <div class="tour-card sold-out">
+      <div class="tour-city">Santa Cruz, CA</div>
+      <div class="tour-date">June 5&ndash;6</div>
+      <div class="tour-status status-sold">Sold Out</div>
+    </div>
+    <div class="tour-card">
+      <div class="tour-city">Seattle, WA</div>
+      <div class="tour-date">August 7&ndash;8</div>
+      <div class="tour-status status-open">Spots Available</div>
+    </div>
+    <div class="tour-card sold-out">
+      <div class="tour-city">Tucson, AZ</div>
+      <div class="tour-date">August 15</div>
+      <div class="tour-status status-sold">Sold Out</div>
+    </div>
+  </div>
+  <p style="color:var(--white-50);font-size:13px;margin-top:16px">3 of 4 cities already sold out. Is yours next?</p>
+  <div style="margin-top:24px"><button class="cta-btn" style="max-width:440px;margin:0 auto" onclick="scrollToForm()">Apply Now</button></div>
+</div>
+</section>
+
 <!-- ====== VIDEO ====== -->
-<section class="section">
+<!-- Jordan: Replace the Instagram embed below with your best highlight reel or testimonial video -->
+<!-- To embed a YouTube video, replace the Instagram block with: -->
+<!-- <iframe width="100%" height="400" style="border-radius:12px" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+<section class="section fade-up">
 <div class="container text-center">
   <span class="tag">See It In Action</span>
   <h2>This Is What Happens When We Walk Into a Studio</h2>
-  <div class="video-box" id="videoBox">
-    <div class="play-btn"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5z" fill="#0a0a0a"/></svg></div>
-    <span class="vid-cap">[Replace with highlight reel or testimonial video]</span>
+  <div style="max-width:480px;margin:0 auto">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBrVIYESO1d/" data-instgrm-version="14" style="background:var(--black-2);border:1px solid var(--white-10);border-radius:12px;max-width:480px;min-width:280px;padding:0;width:100%"></blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
   </div>
-</div>
   <div style="margin-top:32px"><button class="cta-btn" style="max-width:440px;margin:0 auto" onclick="scrollToForm()">Apply Now</button></div>
 </div>
 </section>
 
 <!-- ====== BENEFITS ====== -->
-<section class="section">
+<section class="section fade-up">
 <div class="container text-center">
   <span class="tag">What's Included</span>
   <h2>Everything Your Studio Needs. Nothing You Have to Do.</h2>
@@ -676,7 +662,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 </section>
 
 <!-- ====== HOW IT WORKS ====== -->
-<section class="section">
+<section class="section fade-up">
 <div class="container">
   <div class="text-center"><span class="tag">How It Works</span><h2>3 Steps. That's It.</h2></div>
   <div class="steps">
@@ -699,7 +685,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 </section>
 
 <!-- ====== FACULTY ====== -->
-<section class="section">
+<section class="section fade-up">
 <div class="container text-center">
   <span class="tag">Our Faculty</span>
   <h2>Names Your Dancers Already Know</h2>
@@ -743,7 +729,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 </section>
 
 <!-- ====== TESTIMONIAL ====== -->
-<section class="section">
+<section class="section fade-up">
 <div class="container">
   <div class="text-center"><span class="tag">From Studio Owners</span><h2>Don't Take Our Word For It</h2></div>
   <div class="test-block">
@@ -756,7 +742,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 </section>
 
 <!-- ====== FAQ ====== -->
-<section class="section">
+<section class="section fade-up">
 <div class="container">
   <div class="text-center"><span class="tag">Questions</span><h2>You're Probably Wondering...</h2></div>
   <div class="faq-list">
@@ -781,7 +767,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 </section>
 
 <!-- ====== FINAL CTA ====== -->
-<section class="final-cta" id="finalCta">
+<section class="final-cta fade-up" id="finalCta">
 <div class="container">
   <span class="tag">Don't Wait</span>
   <h2>Your Competitor Saw This Ad Too.</h2>
@@ -795,8 +781,9 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
       <div class="progress-dot" id="bpd5"></div>
     </div>
     <div class="form-step active" id="bstep1">
-      <div class="spots"><span class="dot"></span>Extremely Limited: 1 Studio per City!</div>
+      <div class="spots"><span class="dot"></span>Limited &mdash; 1 studio per city</div>
       <div class="step-heading">Apply For Your Studio</div>
+      <div class="step-sub">Takes 30 seconds. See if your studio qualifies.</div>
       <div class="form-row">
         <div>
           <input type="text" class="form-input" placeholder="First Name" id="bfname" autocomplete="given-name">
@@ -858,6 +845,10 @@ function nextStep(from) {
     hideErr('pitch');
     formData.pitch = pitch;
     sendFormData();
+    fireFBEvent('CompleteRegistration', {});
+    currentStep = 5;
+    showStep(5);
+    return;
   }
 
   currentStep = from + 1;
@@ -866,7 +857,6 @@ function nextStep(from) {
 
   // Fire pixel events
   if (from === 1) fireFBEvent('Lead', {});
-  if (from === 4) fireFBEvent('CompleteRegistration', {});
 }
 
 function prevStep(to) {
@@ -976,23 +966,33 @@ function scrollToForm() {
 
 // ===== FORM SUBMISSION (Email Notification) =====
 function sendFormData() {
-  // Replace [YOUR_FORMSPREE_ID] with your Formspree endpoint
-  // Sign up free at formspree.io, create a form, and paste the ID below
-  const endpoint = 'https://formspree.io/f/[YOUR_FORMSPREE_ID]';
+  var payload = {
+    Name: formData.fname + ' ' + formData.lname,
+    Email: formData.email,
+    Phone: formData.phone,
+    'About Studio': formData.pitch
+  };
 
-  fetch(endpoint, {
+  // Email notification to Jordan
+  fetch('https://formsubmit.co/ajax/info@morethanmotionintensive.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      name: formData.fname + ' ' + formData.lname,
-      email: formData.email,
-      phone: formData.phone,
-      pitch: formData.pitch,
+    body: JSON.stringify(Object.assign({}, payload, {
       _subject: 'New Studio Application: ' + formData.fname + ' ' + formData.lname,
-    })
-  }).catch(function() {
-    // Silently fail — don't interrupt UX. Data is also in the pixel events.
-  });
+      _template: 'table'
+    }))
+  }).catch(function() {});
+
+  // Google Sheets logging (replace URL with your Apps Script web app URL)
+  var sheetsURL = window.GOOGLE_SHEETS_URL;
+  if (sheetsURL) {
+    fetch(sheetsURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function() {});
+  }
 }
 
 // ===== FB PIXEL HELPER =====
@@ -1068,6 +1068,18 @@ function checkCounters() {
 }
 window.addEventListener('scroll', checkCounters, { passive: true });
 checkCounters(); // Check on load in case already visible
+
+// ===== SCROLL REVEAL ANIMATIONS =====
+const fadeEls = document.querySelectorAll('.fade-up');
+const fadeObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+fadeEls.forEach(function(el) { fadeObserver.observe(el); });
 </script>
 </body>
 </html>
