@@ -6,8 +6,8 @@
 <title>More Than Motion | Apply For Your Studio</title>
 
 <!-- Open Graph -->
-<meta property="og:title" content="We're Picking ONE Studio in Your City — $1,000+ Intensive Credit">
-<meta property="og:description" content="We bring elite faculty, handle all logistics, and you keep the profit. Apply now — only 1 studio per city selected.">
+<meta property="og:title" content="Earn $2,000+ From a Fully Produced Intensive — More Than Motion">
+<meta property="og:description" content="We bring elite faculty, handle all the logistics, and your studio keeps the profit. Apply now.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="[YOUR_URL_HERE]">
 <meta property="og:image" content="[YOUR_OG_IMAGE_URL_HERE]">
@@ -348,21 +348,20 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 .step-desc-text{font-size:13px;color:var(--white-50);line-height:1.5}
 
 /* ========== FACULTY ========== */
-.faculty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.faculty-card{
-  background:var(--white-03);border:1px solid var(--white-06);
-  border-radius:var(--radius);padding:20px 12px;text-align:center;
+.faculty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 16px}
+.faculty-card{text-align:center}
+.faculty-avatar{
+  width:120px;height:120px;
+  border-radius:50%;margin:0 auto 12px;
+  overflow:hidden;border:2px solid var(--white-10);
   transition:border-color .25s ease,transform .25s ease;
 }
-.faculty-card:hover{border-color:var(--gold-20);transform:translateY(-2px)}
-.faculty-avatar{
-  width:64px;height:64px;
-  background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));
-  border-radius:50%;margin:0 auto 12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;font-weight:800;color:var(--black);
-}
-.faculty-name{font-size:14px;font-weight:700;margin-bottom:2px}
+.faculty-card:hover .faculty-avatar{border-color:var(--gold-30);transform:scale(1.03)}
+.faculty-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.faculty-name{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.faculty-handle{font-size:12px;color:var(--gold);font-weight:500}
+.faculty-handle a{color:var(--gold);text-decoration:none}
+.faculty-handle a:hover{text-decoration:underline}
 .faculty-credit{font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 
 /* ========== TESTIMONIAL ========== */
@@ -433,10 +432,10 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
   .proof-label{font-size:10px}
   .section{padding:44px 0}
   .benefit-grid{grid-template-columns:1fr}
-  .faculty-grid{grid-template-columns:repeat(3,1fr);gap:8px}
-  .faculty-avatar{width:52px;height:52px;font-size:18px}
-  .faculty-name{font-size:12px}
-  .faculty-credit{font-size:10px}
+  .faculty-grid{grid-template-columns:repeat(3,1fr);gap:16px 8px}
+  .faculty-avatar{width:90px;height:90px}
+  .faculty-name{font-size:11px}
+  .faculty-handle{font-size:10px}
   .cal-grid{gap:2px}
   .cal-day{font-size:12px}
   .credits-banner{padding:20px 0}
@@ -692,39 +691,56 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
   <p style="color:var(--white-50);font-size:13px;margin-bottom:24px">Faculty from the stages of Beyonc&eacute;, Justin Bieber, Tate McRae &amp; more. Featured on Dancing with the Stars &amp; SYTYCD. Training dancers at LSU, FSU, OSU, UCF, USD, GCU &amp; Minnesota.</p>
   <div class="faculty-grid">
     <div class="faculty-card">
-      <div class="faculty-avatar">KR</div>
-      <div class="faculty-name">Kaycee Rice</div>
-      <div class="faculty-credit">Guest Artist</div>
-    </div>
-    <div class="faculty-card">
-      <div class="faculty-avatar">PW</div>
-      <div class="faculty-name">Phil Wright</div>
-      <div class="faculty-credit">Guest Artist</div>
-    </div>
-    <div class="faculty-card">
-      <div class="faculty-avatar">MD</div>
-      <div class="faculty-name">Marguerite Derricks</div>
-      <div class="faculty-credit">Guest Artist</div>
-    </div>
-  </div>
-  <div class="faculty-grid" style="margin-top:12px">
-    <div class="faculty-card">
-      <div class="faculty-avatar">EC</div>
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/3efb8ca9-c956-4ae2-a444-cb405f6f56e1/8FCB7CD2-7C54-493E-A84C-067BCD7612C8_L0_001-8_24_2023%2C+4_36_26+PM.jpg" alt="Emily Crouch" loading="lazy"></div>
       <div class="faculty-name">Emily Crouch</div>
-      <div class="faculty-credit">Faculty</div>
+      <div class="faculty-handle"><a href="https://instagram.com/emcrouchie" target="_blank" rel="noopener">@emcrouchie</a></div>
     </div>
     <div class="faculty-card">
-      <div class="faculty-avatar">ED</div>
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/67ac16e7-42bc-4a44-afbe-24956ee271e4/66CEABF9-B236-43FC-B347-B9A6A7E73784_L0_001-8_24_2023%2C+4_52_15+PM.jpg" alt="Evan DeBenedetto" loading="lazy"></div>
       <div class="faculty-name">Evan DeBenedetto</div>
-      <div class="faculty-credit">Faculty</div>
+      <div class="faculty-handle"><a href="https://instagram.com/evandebenedetto" target="_blank" rel="noopener">@evandebenedetto</a></div>
     </div>
     <div class="faculty-card">
-      <div class="faculty-avatar">RB</div>
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/cf7e925e-4067-48a3-9f4d-597c070bf4fd/6A60EF61-F606-43DF-B8CE-373E81EEE036_L0_001-8_24_2023%2C+4_36_31+PM.jpg" alt="Robbie Blue" loading="lazy"></div>
       <div class="faculty-name">Robbie Blue</div>
-      <div class="faculty-credit">Faculty</div>
+      <div class="faculty-handle"><a href="https://instagram.com/itsrobbiesworld_" target="_blank" rel="noopener">@itsrobbiesworld_</a></div>
     </div>
   </div>
-  <p style="color:var(--white-30);font-size:11px;margin-top:16px">*Faculty varies by location. Additional faculty: Geovanna Bortoleto, Holden Maples, Jose Tena, Emiliano Jimenez, Gheremi Clay, Nathan Cherry</p>
+  <div class="faculty-grid" style="margin-top:8px">
+    <div class="faculty-card">
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/b7da5690-dd59-4dbe-95ce-f6ed2cc6a7b1/IMG_7097.jpeg" alt="Geovanna Bortoleto" loading="lazy"></div>
+      <div class="faculty-name">Geovanna Bortoleto</div>
+      <div class="faculty-handle"><a href="https://instagram.com/geovanna.gb" target="_blank" rel="noopener">@geovanna.gb</a></div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/0ae8d167-b04c-449a-a1d6-452daf97a905/A061D603-AAA8-47DF-86AB-8F24F75FF8A2_L0_001-8_24_2023%2C+4_37_37+PM.jpg" alt="Holden Maples" loading="lazy"></div>
+      <div class="faculty-name">Holden Maples</div>
+      <div class="faculty-handle"><a href="https://instagram.com/holden.maples" target="_blank" rel="noopener">@holden.maples</a></div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/b5de8633-6645-4c7b-b463-7245591e4e85/562210BE-E2BD-4773-9C45-5E7B047F1BF7_L0_001-10_6_2023%2C+3_07_22+PM.jpg" alt="Jose Tena" loading="lazy"></div>
+      <div class="faculty-name">Jose Tena</div>
+      <div class="faculty-handle"><a href="https://instagram.com/iamboyboi" target="_blank" rel="noopener">@iamboyboi</a></div>
+    </div>
+  </div>
+  <div class="faculty-grid" style="margin-top:8px">
+    <div class="faculty-card">
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/cc61d089-3534-4da0-9a5d-c5b007cf32bf/A3BD0E97-F1D2-4458-A61E-11235D92E8E7_L0_001-10_17_2023%2C+12_37_55+PM.jpg" alt="Emiliano Jimenez" loading="lazy"></div>
+      <div class="faculty-name">Emiliano Jimenez</div>
+      <div class="faculty-handle"><a href="https://instagram.com/emiliano_jimenez" target="_blank" rel="noopener">@emiliano_jimenez</a></div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/df169112-ade1-40cc-be18-b72471cbadcf/854B3C45-3FB0-49D1-A9AA-9DF8FA1AC39A_L0_001-10_6_2023%2C+3_07_01+PM.jpg" alt="Gheremi Clay" loading="lazy"></div>
+      <div class="faculty-name">Gheremi Clay</div>
+      <div class="faculty-handle"><a href="https://instagram.com/gheremi_clay" target="_blank" rel="noopener">@gheremi_clay</a></div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar"><img src="https://images.squarespace-cdn.com/content/v1/5e5424b1bd8d510abdee32ab/134dd8ef-d288-42be-bfe7-07365b686f11/IMG_7343.jpeg" alt="Nathan Cherry" loading="lazy"></div>
+      <div class="faculty-name">Nathan Cherry</div>
+      <div class="faculty-handle"><a href="https://instagram.com/nathan.cherry" target="_blank" rel="noopener">@nathan.cherry</a></div>
+    </div>
+  </div>
+  <p style="color:var(--white-30);font-size:11px;margin-top:16px">*Faculty varies by location</p>
 </div>
 </section>
 
