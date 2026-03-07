@@ -256,6 +256,23 @@ textarea.form-input{
   margin-top:12px;font-size:13px;color:var(--gold);font-weight:600;
   letter-spacing:.04em;
 }
+.seen-on-section{
+  padding:20px 0 0;
+  background:var(--black);
+  text-align:center;
+}
+.seen-on-label{
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--white-30);margin-bottom:2px;
+}
+.seen-on-logos{
+  display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;
+}
+.seen-on-logo{
+  height:60px;opacity:.7;transition:opacity .3s ease;
+}
+.seen-on-logo:hover{opacity:1}
+.seen-on-logo.sytycd{height:140px}
 
 /* ========== IMAGE GALLERY ========== */
 .gallery{padding:0;overflow:hidden}
@@ -327,6 +344,20 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 .benefit-icon{font-size:24px;margin-bottom:10px}
 .benefit-title{font-size:15px;font-weight:700;margin-bottom:4px}
 .benefit-desc{font-size:13px;color:var(--white-50);line-height:1.5}
+
+/* ========== WEEKEND INCLUDES ========== */
+.weekend-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.weekend-item{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 14px;
+  background:var(--white-03);border:1px solid var(--white-06);
+  border-radius:var(--radius);
+}
+.weekend-icon{font-size:18px;flex-shrink:0}
+.weekend-text{font-size:14px;color:var(--white-90);font-weight:500}
+.weekend-addon{border-color:var(--gold-20);background:var(--gold-10)}
+.weekend-addon .weekend-text{color:var(--gold-light)}
+.weekend-addon-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-right:6px}
 
 /* ========== STEPS ========== */
 .steps{display:grid;gap:20px}
@@ -423,6 +454,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
   .proof-label{font-size:10px}
   .section{padding:44px 0}
   .benefit-grid{grid-template-columns:1fr}
+  .weekend-grid{grid-template-columns:1fr}
   .faculty-grid{grid-template-columns:repeat(3,1fr);gap:16px 8px}
   .faculty-avatar{width:90px;height:90px}
   .faculty-name{font-size:11px}
@@ -434,6 +466,10 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
   .credit-avatar{width:72px;height:72px}
   .credit-name{font-size:12px}
   .credits-sub{font-size:11px}
+  .seen-on-section{padding:0}
+  .seen-on-logos{gap:28px}
+  .seen-on-logo{height:44px}
+  .seen-on-logo.sytycd{height:100px}
   .gallery-grid{grid-template-columns:1fr 1fr;gap:3px}
   .gallery-grid img{height:200px}
 }
@@ -448,7 +484,7 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
 <!-- ====== HERO ====== -->
 <section class="hero" id="hero">
 <div class="container text-center">
-  <h1>Earn <span class="hl">$2,000+</span> From a <span class="hl">Fully Produced Intensive</span> Without Lifting a Finger</h1>
+  <h1>Earn <span class="hl">$2,000+</span> From a<br><span class="hl">Fully Produced Intensive</span><br>Without Lifting a Finger</h1>
   <p class="hero-sub">We bring elite faculty, handle all the logistics,<br>and your studio keeps the profit.</p>
 
   <!-- ====== MULTI-STEP FORM ====== -->
@@ -572,7 +608,17 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
       <div class="credit-name">Nicki Minaj</div>
     </div>
   </div>
-  <div class="credits-sub">As Seen On: Dancing with the Stars &bull; So You Think You Can Dance</div>
+</div>
+</section>
+
+<!-- ====== AS SEEN ON ====== -->
+<section class="seen-on-section fade-up">
+<div class="container">
+  <div class="seen-on-label">As Seen On</div>
+  <div class="seen-on-logos">
+    <img src="dwts.png" alt="Dancing with the Stars" class="seen-on-logo" loading="lazy">
+    <img src="sytycd.png" alt="So You Think You Can Dance" class="seen-on-logo sytycd" loading="lazy">
+  </div>
 </div>
 </section>
 
@@ -662,6 +708,43 @@ h2{font-size:clamp(22px,5vw,30px);font-weight:800;line-height:1.12;letter-spacin
     </div>
   </div>
   <p style="color:var(--white-30);font-size:12px;margin-top:16px;line-height:1.5">Two tracks available: <strong style="color:var(--white-50)">Dance Team</strong> &amp; <strong style="color:var(--white-50)">Commercial</strong>. Optional add-ons: videographer services &amp; competition dance critiques for nationals.</p>
+</div>
+</section>
+
+<!-- ====== WEEKEND INCLUDES ====== -->
+<section class="section fade-up">
+<div class="container">
+  <div class="text-center"><span class="tag">The Intensive</span><h2>What Your Dancers Get</h2></div>
+  <div class="weekend-grid">
+    <div class="weekend-item">
+      <div class="weekend-icon">💃</div>
+      <div class="weekend-text">Classes in Various Styles</div>
+    </div>
+    <div class="weekend-item">
+      <div class="weekend-icon">🎥</div>
+      <div class="weekend-text">On-Camera Video Shoot</div>
+    </div>
+    <div class="weekend-item">
+      <div class="weekend-icon">🎤</div>
+      <div class="weekend-text">Q+A with Faculty</div>
+    </div>
+    <div class="weekend-item">
+      <div class="weekend-icon">📓</div>
+      <div class="weekend-text">Journal Session</div>
+    </div>
+    <div class="weekend-item">
+      <div class="weekend-icon">⭐</div>
+      <div class="weekend-text">Audition Feedback Class</div>
+    </div>
+    <div class="weekend-item weekend-addon">
+      <div class="weekend-icon">🎬</div>
+      <div class="weekend-text"><span class="weekend-addon-label">Add-On</span>Videographer</div>
+    </div>
+    <div class="weekend-item weekend-addon">
+      <div class="weekend-icon">🏆</div>
+      <div class="weekend-text"><span class="weekend-addon-label">Add-On</span>Competition Dance Critiques</div>
+    </div>
+  </div>
 </div>
 </section>
 
